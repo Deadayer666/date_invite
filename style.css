@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Скрываем прокрутку */
+    background: linear-gradient(to bottom right, #ffcccc, #ff6699); /* Нежный градиент */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Занимаем всю высоту экрана */
+    color: #333;
+    text-align: center;
+    position: relative; /* Для позиционирования контейнера с сердечками */
+}
+
+#app-container {
+    position: relative; /* Чтобы сердечки летали над ним */
+    z-index: 1; /* Над сердечками */
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон контента */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 400px;
+}
+
+#hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Сердечки не мешают кликать */
+    overflow: hidden; /* Сердечки не выходят за границы */
+    z-index: 0; /* Под контентом */
+}
+
+.heart {
+    position: absolute;
+    font-size: 24px; /* Размер сердечка */
+    color: #ff0066; /* Цвет сердечка */
+    animation: floatUp 5s ease-in forwards; /* Анимация полета */
+    opacity: 0; /* Изначально невидимы */
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+}
+
+/* Анимация полета сердечка */
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(0) rotate(0deg);
+    }
+    20% {
+         opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-500px) rotate(360deg); /* Летят вверх */
+    }
+}
+
+
+h1 {
+    color: #e91e63; /* Яркий цвет для заголовка */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #ff4081; /* Розовая кнопка */
+    border: none;
+    border-radius: 30px; /* Скругленные углы */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #e91e63; /* Темнее при наведении */
+}
+
+.button:active {
+    transform: scale(0.98); /* Немного уменьшается при нажатии */
+}
