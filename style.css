@@ -2,7 +2,8 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Скрываем прокрутку */
-    background: linear-gradient(to bottom right, #ffcccc, #ff6699); /* Нежный градиент */
+    /* background: linear-gradient(to bottom right, #ffcccc, #ff6699); /* УДАЛЯЕМ ИЛИ КОММЕНТИРУЕМ ЭТУ СТРОКУ */
+    background-color: #4B002A; /* НОВЫЙ ФОН: Темный романтичный цвет, можно поменять на другой темный */
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
